@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+collections:
+  - name: "recipes"
+    label: "Recipes"
+    folder: "content/recipes"
+    create: true
+    slug: "recipes/{{slug}}"
+    extension: "md"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Cover Image", name: "cover_image", widget: "image", required: false}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "markdown"}
+      - {label: "Prep Time", name: "prep_time", widget: "number", valueType: "int", min: 1}
+      - {label: "Cook Time", name: "cook_time", widget: "number", valueType: "int", min: 1}
+      - {label: "Ingredients", name: "ingredients", widget: "markdown"}
+      - {label: "Instructions", name: "instructions", widget: "markdown"}
