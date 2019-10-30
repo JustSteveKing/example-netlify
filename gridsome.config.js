@@ -14,7 +14,6 @@ module.exports = {
 
   plugins: [
     {
-      // Create posts from markdown files
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'Recipe',

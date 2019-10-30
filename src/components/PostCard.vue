@@ -9,6 +9,10 @@
 
       <PostMeta class="post-card__meta" :post="post" />
 
+      <p v-html="post.ingredients" />
+      
+      <p v-html="post.instructions" />
+
       <g-link class="post-card__link" :to="post.path">Link</g-link>
     </div>
   </div>
